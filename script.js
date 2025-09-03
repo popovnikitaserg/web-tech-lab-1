@@ -5,7 +5,7 @@ const cartItemsList = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
 const cartCount = document.getElementById("cart-count");
 
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 cartButton.addEventListener("click", () => {
   cartModal.removeAttribute("hidden");
@@ -106,4 +106,8 @@ function updateCart() {
 
   cartTotal.textContent = total;
   cartCount.textContent = count;
+
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
+
+updateCart();
