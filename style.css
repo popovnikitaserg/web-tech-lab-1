@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
@@ -13,7 +17,11 @@ body {
 }
 
 header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: flex;
+    background: #fff;
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
@@ -38,30 +46,66 @@ header h1 {
 }
 
 .catalog {
-    margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.catalog h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: calc(4 * 200px + 3 * 15px);
+  text-align: left;
 }
 
 .product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 15px;
+  justify-content: center;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
+  background: #fff;
 }
 
 .product-card img {
   width: 100%;
-  height: 220px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
 }
 
 .product-card h3 {
-    margin: 10px 0;
-    font-size: 1.2rem;
+  font-size: 1rem;
+  margin: 8px 0;
 }
 
-.price {
-    font-weight: bold;
-    margin-bottom: 10px;
+.product-card .price {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-card button {
+  padding: 8px 12px;
+  border: none;
+  background: #0077cc;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.product-card button:hover {
+  background: #005fa3;
 }
 
 .add-to-cart {
@@ -123,7 +167,6 @@ header h1 {
   background: #218838;
 }
 
-/* Форма заказа */
 #order-form {
   display: flex;
   flex-direction: column;
@@ -142,7 +185,6 @@ header h1 {
   border-radius: 5px;
 }
 
-/* Подвал */
 footer {
   text-align: center;
   padding: 15px 0;
@@ -151,15 +193,28 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Адаптивность */
+@media (max-width: 1200px) {
+  .product-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   header h1 {
     font-size: 1.2rem;
   }
-
+  .product-list {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
+  }
   #cart-button {
     padding: 6px 12px;
     font-size: 0.9rem;
+  }
+  .nav-links {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
   }
 }
 
@@ -171,4 +226,59 @@ footer {
   .modal-content {
     max-width: 90%;
   }
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #0077cc;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  background: #fff;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+  padding: 20px;
+  z-index: 1000;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #333;
 }

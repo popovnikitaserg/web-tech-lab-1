@@ -5,6 +5,14 @@ const cartItemsList = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
 const cartCount = document.getElementById("cart-count");
 
+const checkoutButton = document.getElementById("checkout-button");
+const orderModal = document.getElementById("order-modal");
+const closeOrder = document.getElementById("close-order");
+const orderForm = document.getElementById("order-form");
+
+const menuToggle = document.getElementById("menu-toggle");
+const mobileMenu = document.getElementById("mobile-menu");
+
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 cartButton.addEventListener("click", () => {
@@ -18,6 +26,49 @@ closeCart.addEventListener("click", () => {
 cartModal.addEventListener("click", (event) => {
   if (event.target === cartModal) {
     cartModal.setAttribute("hidden", true);
+  }
+});
+
+checkoutButton.addEventListener("click", () => {
+    orderModal.removeAttribute("hidden");
+});
+
+closeOrder.addEventListener("click", () => {
+    orderModal.setAttribute("hidden", true);
+});
+
+orderModal.addEventListener("click", (event) => {
+    if (event.target === orderModal) {
+        orderModal.setAttribute("hidden", true);
+    }
+});
+
+orderForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  alert("Заказ создан!");
+
+  cart = [];
+  updateCart();
+
+  orderModal.setAttribute("hidden", true);
+
+  orderForm.reset();
+});
+
+menuToggle.addEventListener("click", () => {
+  if (mobileMenu.hasAttribute("hidden")) {
+    mobileMenu.removeAttribute("hidden");
+  } else {
+    mobileMenu.setAttribute("hidden", true);
+  }
+});
+
+document.addEventListener("click", (event) => {
+  if (!mobileMenu.hasAttribute("hidden") &&
+      !mobileMenu.contains(event.target) &&
+      event.target !== menuToggle) {
+    mobileMenu.setAttribute("hidden", true);
   }
 });
 

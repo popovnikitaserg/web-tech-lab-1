@@ -9,14 +9,35 @@
 <body>
     <header>
         <h1>Магазин товаров для тяжелой атлетики</h1>
+        
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#barbells">Грифы</a></li>
+                <li><a href="#shoes">Штангетки</a></li>
+                <li><a href="#plates">Блины</a></li>
+                <li><a href="#platforms">Помосты</a></li>
+                <li><a href="#other">Прочее</a></li>
+            </ul>
+            <button id="menu-toggle" class="menu-toggle">☰</button>
+        </nav>
         <button id="cart-button">
             Корзина (<span id="cart-count">0</span>)
         </button>
     </header>
 
+    <div id="mobile-menu" class="mobile-menu" hidden>
+        <ul>
+            <li><a href="#barbells">Грифы</a></li>
+            <li><a href="#shoes">Штангетки</a></li>
+            <li><a href="#plates">Блины</a></li>
+            <li><a href="#platforms">Помосты</a></li>
+            <li><a href="#other">Прочее</a></li>
+        </ul>
+    </div>
+
     <main>
-        <section class="catalog">
-            <h2>Каталог товаров</h2>
+        <section id="barbells" class="catalog">
+            <h2>Грифы</h2>
             <div class="product-list">
                 <article class="product-card" data-id="1">
                     <img src="img/product1.jpg" alt="Олимпийский гриф Eleiko 20 kg">
@@ -30,77 +51,95 @@
                     <p class="price">230000 ₽</p>
                     <button class="add-to-cart">Добавить в корзину</button>
                 </article>
-                <article class="product-card" data-id="2">
-                    <img src="img/product2.jpg" alt="Олимпийский гриф Eleiko 15 kg">
-                    <h3>Олимпийский гриф Eleiko 15 kg</h3>
-                    <p class="price">230000 ₽</p>
+                <article class="product-card" data-id="3">
+                    <img src="img/img3.webp" alt="Тренировочный гриф Eleiko 20 kg">
+                    <h3>Тренировочный гриф Eleiko 20 kg</h3>
+                    <p class="price">150000 ₽</p>
                     <button class="add-to-cart">Добавить в корзину</button>
                 </article>
-                <article class="product-card" data-id="2">
-                    <img src="img/product2.jpg" alt="Олимпийский гриф Eleiko 15 kg">
-                    <h3>Олимпийский гриф Eleiko 15 kg</h3>
-                    <p class="price">230000 ₽</p>
+            </div>
+        </section>
+
+        <section id="shoes" class="catalog">
+            <h2>Штангетки</h2>
+            <div class="product-list">
+                <article class="product-card" data-id="4">
+                    <img src="img/nike2.jpg" alt="Nike Romaleos 2">
+                    <h3>Nike Romaleos 2</h3>
+                    <p class="price">30000 ₽</p>
                     <button class="add-to-cart">Добавить в корзину</button>
                 </article>
-                <article class="product-card" data-id="2">
-                    <img src="img/product2.jpg" alt="Олимпийский гриф Eleiko 15 kg">
-                    <h3>Олимпийский гриф Eleiko 15 kg</h3>
-                    <p class="price">230000 ₽</p>
+                <article class="product-card" data-id="5">
+                    <img src="img/nike3.jpg" alt="Nike Romaleos 3">
+                    <h3>Nike Romaleos 3</h3>
+                    <p class="price">15000 ₽</p>
                     <button class="add-to-cart">Добавить в корзину</button>
                 </article>
-                <article class="product-card" data-id="2">
-                    <img src="img/product2.jpg" alt="Олимпийский гриф Eleiko 15 kg">
-                    <h3>Олимпийский гриф Eleiko 15 kg</h3>
-                    <p class="price">230000 ₽</p>
+                <article class="product-card" data-id="6">
+                    <img src="img/nike4.avif" alt="Nike Romaleos 4">
+                    <h3>Nike Romaleos 4</h3>
+                    <p class="price">27000 ₽</p>
                     <button class="add-to-cart">Добавить в корзину</button>
                 </article>
-                <article class="product-card" data-id="2">
-                    <img src="img/product2.jpg" alt="Олимпийский гриф Eleiko 15 kg">
-                    <h3>Олимпийский гриф Eleiko 15 kg</h3>
-                    <p class="price">230000 ₽</p>
+                <article class="product-card" data-id="7">
+                    <img src="img/lu1.webp" alt="LUXIAOJUN Golden">
+                    <h3>LUXIAOJUN Golden</h3>
+                    <p class="price">15000 ₽</p>
                     <button class="add-to-cart">Добавить в корзину</button>
                 </article>
-                <article class="product-card" data-id="2">
-                    <img src="img/product2.jpg" alt="Олимпийский гриф Eleiko 15 kg">
-                    <h3>Олимпийский гриф Eleiko 15 kg</h3>
-                    <p class="price">230000 ₽</p>
+                <article class="product-card" data-id="8">
+                    <img src="img/tyr1.jpeg" alt="TYRFORCE Elite">
+                    <h3>TYRFORCE Elite Carbon</h3>
+                    <p class="price">21000 ₽</p>
                     <button class="add-to-cart">Добавить в корзину</button>
                 </article>
-                <article class="product-card" data-id="2">
-                    <img src="img/product2.jpg" alt="Олимпийский гриф Eleiko 15 kg">
-                    <h3>Олимпийский гриф Eleiko 15 kg</h3>
-                    <p class="price">230000 ₽</p>
+            </div>
+        </section>
+
+        <section id="plates" class="catalog">
+            <h2>Блины</h2>
+            <div class="product-list">
+                <article class="product-card" data-id="9">
+                    <img src="img/plates1.webp" alt="Комплект соревновательных дисков Eleiko">
+                    <h3>Комплект соревновательных дисков Eleiko</h3>
+                    <p class="price">200000 ₽</p>
                     <button class="add-to-cart">Добавить в корзину</button>
                 </article>
-                <article class="product-card" data-id="2">
-                    <img src="img/product2.jpg" alt="Олимпийский гриф Eleiko 15 kg">
-                    <h3>Олимпийский гриф Eleiko 15 kg</h3>
-                    <p class="price">230000 ₽</p>
+                <article class="product-card" data-id="9">
+                    <img src="img/eleiko2.avif" alt="Комплект дисков 25 кг Eleiko">
+                    <h3>Комплект дисков 25 кг Eleiko</h3>
+                    <p class="price">40000 ₽</p>
                     <button class="add-to-cart">Добавить в корзину</button>
                 </article>
-                <article class="product-card" data-id="2">
-                    <img src="img/product2.jpg" alt="Олимпийский гриф Eleiko 15 kg">
-                    <h3>Олимпийский гриф Eleiko 15 kg</h3>
-                    <p class="price">230000 ₽</p>
+                <article class="product-card" data-id="9">
+                    <img src="img/eleiko3.avif" alt="Комплект дисков 20 кг Eleiko">
+                    <h3>Комплект дисков 20 кг Eleiko</h3>
+                    <p class="price">36000 ₽</p>
                     <button class="add-to-cart">Добавить в корзину</button>
                 </article>
-                <article class="product-card" data-id="2">
-                    <img src="img/product2.jpg" alt="Олимпийский гриф Eleiko 15 kg">
-                    <h3>Олимпийский гриф Eleiko 15 kg</h3>
-                    <p class="price">230000 ₽</p>
+                <article class="product-card" data-id="9">
+                    <img src="img/eleiko4.jpg" alt="Комплект дисков 15 кг Eleiko">
+                    <h3>Комплект дисков 15 кг Eleiko</h3>
+                    <p class="price">34000 ₽</p>
                     <button class="add-to-cart">Добавить в корзину</button>
                 </article>
-                <article class="product-card" data-id="2">
-                    <img src="img/product2.jpg" alt="Олимпийский гриф Eleiko 15 kg">
-                    <h3>Олимпийский гриф Eleiko 15 kg</h3>
-                    <p class="price">230000 ₽</p>
-                    <button class="add-to-cart">Добавить в корзину</button>
+            </div>
+        </section>
+
+        <section id="platforms" class="catalog">
+            <h2>Помосты</h2>
+            <div class="product-list">
+                <article class="product-card" data-id="">
+
                 </article>
-                <article class="product-card" data-id="2">
-                    <img src="img/product2.jpg" alt="Олимпийский гриф Eleiko 15 kg">
-                    <h3>Олимпийский гриф Eleiko 15 kg</h3>
-                    <p class="price">230000 ₽</p>
-                    <button class="add-to-cart">Добавить в корзину</button>
+            </div>
+        </section>
+
+        <section id="other" class="catalog">
+            <h2>Прочее</h2>
+            <div class="product-list">
+                <article class="product-card" data-id="">
+
                 </article>
             </div>
         </section>
