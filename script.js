@@ -44,19 +44,24 @@ cartModal.addEventListener("click", (event) => {
 // });
 
 checkoutButton.addEventListener("click", () => {
-    orderModal.removeAttribute("hidden");
-    cartModal.classList.remove("show");
-    cartModal.setAttribute("hidden", true);
+  if (cart.length === 0) {
+      alert("В корзине нет товаров!");
+      return;
+  }
+
+  orderModal.removeAttribute("hidden");
+  cartModal.classList.remove("show");
+  cartModal.setAttribute("hidden", true);
 });
 
 closeOrder.addEventListener("click", () => {
-    orderModal.setAttribute("hidden", true);
+  orderModal.setAttribute("hidden", true);
 });
 
 orderModal.addEventListener("click", (event) => {
-    if (event.target === orderModal) {
-        orderModal.setAttribute("hidden", true);
-    }
+  if (event.target === orderModal) {
+      orderModal.setAttribute("hidden", true);
+  }
 });
 
 orderForm.addEventListener("submit", (event) => {
@@ -86,10 +91,12 @@ mobileMenu.querySelectorAll("a").forEach(link => {
 });
 
 document.addEventListener("click", (event) => {
-  if (!mobileMenu.hasAttribute("hidden") &&
-      !mobileMenu.contains(event.target) &&
-      event.target !== menuToggle) {
-    mobileMenu.setAttribute("hidden", true);
+  if (
+    mobileMenu.classList.contains("show") &&
+    !mobileMenu.contains(event.target) &&
+    event.target !== menuToggle
+  ) {
+    mobileMenu.classList.remove("show");
   }
 });
 
