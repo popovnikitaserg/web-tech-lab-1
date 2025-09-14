@@ -20,16 +20,18 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    display: flex;
-    background: #fff;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    padding: 15px 0;
+    background: #fff;
+    padding: 10px 15px;
     border-bottom: 2px solid #ddd;
+    gap: 15px;
 }
 
 header h1 {
     font-size: 1.5rem;
+    white-space: nowrap;
 }
 
 #cart-modal {
@@ -115,12 +117,13 @@ header h1 {
 }
 
 #cart-button {
-    background: #333;
-    color: #fff;
-    border: none;
-    padding: 8px 15px;
-    cursor: pointer;
-    border-radius: 5px;
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  white-space: nowrap;
 }
 
 #cart-button:hover {
@@ -298,6 +301,9 @@ footer {
   .menu-toggle {
     display: block;
   }
+  .navbar {
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 480px) {
@@ -313,6 +319,7 @@ footer {
 .navbar {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 
