@@ -32,6 +32,88 @@ header h1 {
     font-size: 1.5rem;
 }
 
+#cart-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+#cart-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+#cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+#cart-items li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 10px;
+  background: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+#cart-items li span:first-child {
+  flex: 1;
+  font-weight: 500;
+}
+
+#cart-items li div button {
+  margin-left: 5px;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #0077cc;
+  color: #fff;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+#cart-items li div button:hover {
+  background: #005fa3;
+}
+
+#cart-items li div button:last-child {
+  background: #dc3545;
+}
+
+#cart-items li div button:last-child:hover {
+  background: #b02a37;
+}
+
+#cart-total-container {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
 #cart-button {
     background: #333;
     color: #fff;

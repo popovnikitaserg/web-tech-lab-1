@@ -16,21 +16,37 @@ const mobileMenu = document.getElementById("mobile-menu");
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 cartButton.addEventListener("click", () => {
-  cartModal.removeAttribute("hidden");
+  cartModal.classList.add("show");
 });
 
 closeCart.addEventListener("click", () => {
-  cartModal.setAttribute("hidden", true);
+  cartModal.classList.remove("show");
 });
 
 cartModal.addEventListener("click", (event) => {
   if (event.target === cartModal) {
-    cartModal.setAttribute("hidden", true);
+    cartModal.classList.remove("show");
   }
 });
 
+// cartButton.addEventListener("click", () => {
+//   cartModal.removeAttribute("hidden");
+// });
+
+// closeCart.addEventListener("click", () => {
+//   cartModal.setAttribute("hidden", true);
+// });
+
+// cartModal.addEventListener("click", (event) => {
+//   if (event.target === cartModal) {
+//     cartModal.setAttribute("hidden", true);
+//   }
+// });
+
 checkoutButton.addEventListener("click", () => {
     orderModal.removeAttribute("hidden");
+    cartModal.classList.remove("show");
+    cartModal.setAttribute("hidden", true);
 });
 
 closeOrder.addEventListener("click", () => {
@@ -52,6 +68,9 @@ orderForm.addEventListener("submit", (event) => {
   updateCart();
 
   orderModal.setAttribute("hidden", true);
+
+  cartModal.classList.remove("show");
+  cartModal.setAttribute("hidden", true);
 
   orderForm.reset();
 });
