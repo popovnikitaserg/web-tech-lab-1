@@ -76,11 +76,13 @@ orderForm.addEventListener("submit", (event) => {
 });
 
 menuToggle.addEventListener("click", () => {
-  if (mobileMenu.hasAttribute("hidden")) {
-    mobileMenu.removeAttribute("hidden");
-  } else {
-    mobileMenu.setAttribute("hidden", true);
-  }
+  mobileMenu.classList.toggle("show");
+});
+
+mobileMenu.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("show");
+  });
 });
 
 document.addEventListener("click", (event) => {

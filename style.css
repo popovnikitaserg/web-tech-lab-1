@@ -350,13 +350,18 @@ footer {
 .mobile-menu {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -100%;
   width: 70%;
   height: 100%;
   background: #fff;
   box-shadow: 2px 0 8px rgba(0,0,0,0.2);
   padding: 20px;
-  z-index: 1000;
+  z-index: 2000;
+  transition: left 0.3s ease;
+}
+
+.mobile-menu.show {
+  left: 0;
 }
 
 .mobile-menu ul {
